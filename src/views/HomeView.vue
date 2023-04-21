@@ -20,8 +20,8 @@
   import { useUserStore } from "@/stores/userSession"
   import { defineComponent } from "vue"
   import NavBar from "@/components/nav/navbar.vue"
-  import CustomFooter from "@/sections/Footer.vue";
-  import Contact from "@/sections/Contact.vue";
+  import CustomFooter from "@/sections/Footer.vue"
+  import Contact from "@/sections/Contact.vue"
   export default defineComponent({
     name: "HomeView",
     components: { Contact, CustomFooter, NavBar, Articles, About, Hero, IntroLayout },

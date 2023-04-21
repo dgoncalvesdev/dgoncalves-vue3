@@ -12,10 +12,20 @@
 <script>
   export default {
     name: "CustomButton",
+    props: {
+      text: {
+        type: String,
+        required: false,
+        default: 'Curious to know more ?'
+      },
+      hoverText: {
+        type: String,
+        required: false,
+        default: 'Let\'s go !'
+      }
+    },
     data() {
       return {
-        text: 'Curious to know more ?',
-        hoverText: 'Let\'s go !',
         isHover: false,
         customBtn: null
       }

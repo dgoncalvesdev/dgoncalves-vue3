@@ -1,7 +1,10 @@
 <template>
   <section class="articles-section">
     <div class="articles-marquee">
-      <simple-marquee type="articles" />
+      <simple-marquee
+        type="articles"
+        animation="scroll"
+      />
     </div>
 
     <div class="articles-list">

@@ -154,7 +154,7 @@
 
         &--img-eyes {
           position: absolute;
-          margin: 0 3% 8% 0;
+          margin: 0 3em 8em 0;
         }
       }
 
@@ -163,7 +163,7 @@
 
         &--text {
           bottom: -100%;
-          width: 20%;
+          width: 15%;
           position: absolute;
           right: 5vw;
         }

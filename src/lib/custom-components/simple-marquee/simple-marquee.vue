@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="marquee"
     class="marquee"
     :class="`marquee-${ animation }`"
   >
@@ -18,25 +19,29 @@
       animation: {
         type: String,
         required: false,
-        default: 'normal'
+        default: 'onHover'
       }
+    },
+    mounted() {
+      if (this.animation === 'scroll') window.addEventListener('scroll', this.updateMarqueePosition)
+    },
+    beforeUnmount() {
+      if (this.animation === 'scroll') window.removeEventListener('scroll', this.updateMarqueePosition)
     },
     methods: {
       getMarqueeText() {
         return (this.type + ' - ').repeat(60)
+      },
+      updateMarqueePosition() {
+        const marquee = this.$refs.marquee
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        marquee.style.transform = `translateX(-${ scrollTop }px)`
       }
     }
   }
 </script>
 
 <style lang="scss">
-  .marquee-left {
-    transform: rotate(5deg);
-  }
-
-  .marquee-right {
-    transform: rotate(-5deg);
-  }
 
   .marquee {
     width: 100%;
@@ -55,7 +60,18 @@
     mix-blend-mode: normal !important;
     font-size: 10em;
     padding-left: -10%;
-    animation: marquee-animation 250s linear infinite;
+  }
+
+  .marquee-onHover span {
+    font-size: 6em;
+  }
+
+  .marquee-onHover span:hover {
+    animation: marquee-animation 80s linear infinite;
+    background-color: $dark-brown;
+    color: $light-brown;
+    font-size: 6em;
+    font-style: italic;
   }
 
   @keyframes marquee-animation {
