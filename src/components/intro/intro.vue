@@ -25,12 +25,12 @@
         </div>
       </div>
 
-      <div class="hero__bottom-section">
-        <div class="hero__bottom-section--text">
-          <h2 class="info-text">{{ info.subTitle }}</h2>
-          <span class="info-head-text">{{ info.title }}</span>
-        </div>
-      </div>
+      <!--      <div class="hero__bottom-section"> -->
+      <!--        <div class="hero__bottom-section&#45;&#45;text"> -->
+      <!--          <h2 class="info-text">{{ info.subTitle }}</h2> -->
+      <!--          <span class="info-head-text">{{ info.title }}</span> -->
+      <!--        </div> -->
+      <!--      </div> -->
     </div>
   </div>
 </template>
@@ -130,7 +130,7 @@
 
         &--text {
           left: -100%;
-          width: 20%;
+          width: 40%;
           position: absolute;
         }
       }

@@ -85,7 +85,7 @@
     align-items: flex-end;
     flex-direction: row;
     margin-left: 80%;
-    margin-top: 30%;
+    margin-top: 35%;
     transform: rotate(-30deg);
   }
 

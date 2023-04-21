@@ -4,7 +4,7 @@ export const useUserStore = defineStore({
   id: "user",
   state: () => ({
     user: {
-      firstEntrance: false
+      firstEntrance: true
     }
   }),
   getters: {

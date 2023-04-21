@@ -1,14 +1,17 @@
 <template>
   <div
-    ref="marquee"
     class="marquee"
     :class="`marquee-${ animation }`"
   >
-    <span> {{ getMarqueeText() }} </span>
+    <span
+      ref="marquee"
+    > {{ getMarqueeText() }} </span>
   </div>
 </template>
 
 <script>
+  import isElementInViewport from "@/utils/isElementInViewport";
+
   export default {
     name: "SimpleMarquee",
     props: {
@@ -34,6 +37,7 @@
       },
       updateMarqueePosition() {
         const marquee = this.$refs.marquee
+        if(!isElementInViewport(marquee))  return
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
         marquee.style.transform = `translateX(-${ scrollTop }px)`
       }

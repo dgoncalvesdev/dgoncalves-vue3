@@ -34,3 +34,20 @@ h4 {
 #app-content {
   width: 100%;
 }
+
+/* Estilizar a barra de rolagem no Chrome e Safari */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: $light-brown; /* Cor de fundo da trilha da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+  background: $dark-brown; /* Cor do preenchimento do polegar da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $middle-brown; /* Cor do preenchimento do polegar da barra de rolagem ao passar o mouse */
+}

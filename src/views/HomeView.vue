@@ -1,8 +1,11 @@
 <template>
   <intro-layout v-show="userStore.isUserFirstEntrance" />
 
-  <nav-bar />
-  <div class="home-wrapper">
+  <div
+    v-if="!userStore.isUserFirstEntrance"
+    class="home-wrapper"
+  >
+    <nav-bar />
     <hero />
     <about />
     <articles />

@@ -145,12 +145,14 @@
     position: relative;
     top: 125px;
     text-transform: uppercase;
-    font-weight: 500;
     font-size: 7vw;
     line-height: 90%;
     color: $dark-brown;
-    -webkit-text-stroke: 1px $light-brown;
+    -webkit-text-stroke: .2px $light-brown;
     display: contents;
+    font-family: 'Space Grotesk Medium', sans-serif;
+    font-style: italic;
+    font-weight: 600;
   }
 
   .header h1::before {
@@ -161,7 +163,7 @@
     width: 0;
     transition: 1s;
     animation: fill 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    animation-delay: 2s;
+    animation-delay: 1s;
   }
 
   @keyframes fill {
