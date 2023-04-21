@@ -1,7 +1,39 @@
-<script setup lang="ts">
+<template>
+  <intro-layout v-show="userStore.isUserFirstEntrance" />
+
+  <nav-bar />
+  <div class="home-wrapper">
+    <hero />
+    <about />
+    <articles />
+    <contact />
+    <custom-footer />
+  </div>
+</template>
+
+<script lang="ts">
+  import IntroLayout from "@/layout/intro-layout.vue"
+  import Hero from "@/sections/Hero.vue"
+  import About from "@/sections/About.vue"
+  import Articles from "@/sections/Articles.vue"
+
+  import { useUserStore } from "@/stores/userSession"
+  import { defineComponent } from "vue"
+  import NavBar from "@/components/nav/navbar.vue"
+  import CustomFooter from "@/sections/Footer.vue";
+  import Contact from "@/sections/Contact.vue";
+  export default defineComponent({
+    name: "HomeView",
+    components: { Contact, CustomFooter, NavBar, Articles, About, Hero, IntroLayout },
+    setup() {
+      const userStore = useUserStore()
+      return { userStore }
+    }
+  })
 </script>
 
-<template>
-  <main>
-  </main>
-</template>
+<style lang="scss" scoped>
+  .home-wrapper {
+    overflow-x: hidden;
+  }
+</style>

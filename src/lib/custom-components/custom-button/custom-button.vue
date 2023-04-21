@@ -1,23 +1,59 @@
 <template>
-    <div class="custom-button-wrapper">
-        jkjkj
-    </div>
+  <button
+    ref="CustomBtn"
+    class="custom-button"
+    @mouseover="onHover"
+    @mouseleave="offHover"
+  >
+    {{ text }}
+  </button>
 </template>
 
-<script lang="ts">
-
-import {defineComponent} from "vue";
-export default defineComponent({
-    name: 'CustomButton',
-    props: {
-        text: String
+<script>
+  export default {
+    name: "CustomButton",
+    data() {
+      return {
+        text: 'Curious to know more ?',
+        hoverText: 'Let\'s go !',
+        isHover: false,
+        customBtn: null
+      }
     },
-    data () {
-
+    mounted() {
+      this.customBtn = this.$refs.CustomBtn
     },
     methods: {
-
+      onHover() {
+        if (this.customBtn)
+          this.customBtn.innerText = this.hoverText
+      },
+      offHover() {
+        if (this.customBtn)
+          this.customBtn.innerText = this.text
+      }
     }
-})
-
+  }
 </script>
+
+<style lang="scss">
+  button {
+    background-color: $dark-brown;
+    color: $light-brown;
+    width: 20vw;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    background-color: $light-brown;
+    color: $dark-brown;
+    border: 1px solid $dark-brown;
+  }
+</style>

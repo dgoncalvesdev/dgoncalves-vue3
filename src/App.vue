@@ -1,9 +1,5 @@
 <template>
-    <div id="app-content">
-  <modern-site/>
-    </div>
+  <div id="app-content">
+    <router-view></router-view>
+  </div>
 </template>
-
-<script setup>
-  import ModernSite from "@/views/ModernSite.vue";
-</script>
